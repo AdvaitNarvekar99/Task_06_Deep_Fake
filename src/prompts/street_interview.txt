@@ -1,0 +1,13 @@
+[JORDAN] Hey everyone, we're here on the street today talking about a new kind of scam: AI deep fakes in job interviews! It's happening more and more, with scammers using fake videos and voices to get remote jobs.
+[JORDAN] Excuse me, have you heard about deep fake job candidates?
+[ALEX] Yeah, it's crazy. You can't even trust a video call anymore. My company is worried about it.
+[JORDAN] What would you do if you were in an interview and noticed something was off?
+[ALEX] I'd probably just end the call. The movements and lip-syncing might not match the audio, and it would feel super creepy.
+[JORDAN] As a hiring manager, how would you make sure you're not interviewing a deep fake?
+[SARAH] I'd look for red flags like distorted facial features or unnatural eye movements. I might even ask them to wave their hand in front of their face to see if it disrupts the filter.
+[JORDAN] That's a smart strategy. Some companies are also using AI to detect this type of fraud.
+[JORDAN] What do you think is the biggest risk for companies hiring deep fake candidates?
+[MARK] It's a huge security risk. You could be hiring a malicious actor without knowing it, which could lead to a loss of intellectual property or data.
+[JORDAN] So it's not just about a fake employee, it's about a real threat to the business.
+[MARK] Exactly. It's a significant security threat that requires immediate attention.
+[JORDAN] And that's a wrap! It's clear that deep fakes are a growing concern, but with the right tactics, businesses and job seekers can stay protected.

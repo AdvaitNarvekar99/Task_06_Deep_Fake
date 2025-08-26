@@ -1,0 +1,30 @@
+# Python cache
+__pycache__
+.pyc
+
+# Virtual envs
+.venv
+env
+venv
+
+# Local data & creds (DO NOT COMMIT KEYS)
+dataaudio_clips
+.log
+.wav
+
+# Cloud creds (very important)
+key.json
+.p12
+.pem
+
+# Assignment docs (keep local only)
+docs.docx
+
+# OSeditor junk
+.DS_Store
+Thumbs.db
+.vscode
+.idea
+
+# zip files
+.zip
