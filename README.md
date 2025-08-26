@@ -9,46 +9,107 @@
 
 ## 📘 Overview
 
-This repository documents my work for **Research Task 06: Deep Fake**.  
-The task required transforming a narrative into an AI-generated “deep fake” interview, ideally as a video.  
-Since high-quality free video-generation tools are limited, I produced an **audio-based street interview** that demonstrates the same concept of simulation and realism.  
+This repository contains my submission for **Research Task 06: Deep Fake**.  
+The goal was to transform a written narrative into an AI-generated “deep fake” interview.  
 
-The emphasis of this task is not only on the **final artifact** but also on the **workflow and process** — exploring free/student tools, iterating on outputs, and critically reflecting on results.  
+Due to limitations of free/student tools, producing a video-based deep fake was not feasible. Instead, I created an **audio-based street interview** to simulate realistic dialogue among multiple speakers discussing the risks of deep fakes in the hiring process.  
+
+The deliverable focuses not only on the final audio file but also on documenting the **workflow, design choices, technical challenges, and ethical reflections** that shaped the project.  
 
 ---
 
 ## 🎯 Objective
 
-The core research question addressed was:
+The primary goal of this task was to investigate:
 
-> **“How can AI-driven tools be used to create a simulated deep fake interview, and what are the challenges, limitations, and implications of this process?”**
+**“How can free AI tools, specifically text-to-speech and audio editing, be leveraged to simulate a deep fake interview experience?”**
 
-To answer this, I focused on:
-- ✍️ Designing a **scripted narrative** around deep fakes in hiring  
-- 🗣️ Generating **realistic character voices** via Google Cloud Text-to-Speech  
-- 🎶 Stitching clips into a continuous MP3 interview using PyDub  
-- 🔍 Reflecting on **technical barriers, ethical risks, and practical takeaways**  
+To achieve this, I focused on the following objectives:  
+- 📝 Write a concise but realistic script to represent an interview scenario.  
+- 🗣️ Assign distinct synthetic voices to multiple roles using Google Cloud Text-to-Speech (TTS).  
+- 🎶 Automate the process of generating clips and stitching them into a final MP3.  
+- 🔍 Reflect on the **technical, methodological, and ethical lessons** drawn from the process.  
 
 ---
 
 ## 🔍 Methodology
 
-1. **Script Development**  
-   - Wrote a conversational script featuring four characters:  
-     - **Jordan** (interviewer)  
-     - **Alex** (casual employee)  
-     - **Sarah** (hiring manager)  
-     - **Mark** (security-focused perspective)  
-   - Script stored in `src/prompts/street_interview.txt` for transparency.  
+### 1. Script Creation
+- Developed a short “street interview” scenario featuring four roles:  
+  - **Jordan** – interviewer, curious and neutral.  
+  - **Alex** – employee perspective, raising concerns.  
+  - **Sarah** – hiring manager perspective, focused on process and detection.  
+  - **Mark** – security-focused perspective, emphasizing organizational risks.  
+- The script was designed to cover **awareness, detection strategies, and security implications** of deep fake candidates.  
+- Stored in `src/prompts/street_interview.txt` to ensure clarity and reproducibility.  
 
-2. **Audio Generation with Google Cloud TTS**  
-   - Used `make_audio.py` to generate individual MP3 clips.  
-   - Mapped distinct voices (`Neural2-C, D, F, H`) to characters.  
-   - Implemented fallbacks in case a preferred voice was unavailable.  
+### 2. Audio Generation
+- Implemented `make_audio.py` to synthesize each line into MP3 format using **Google Cloud TTS**.  
+- Mapped neural voices (`Neural2-C`, `Neural2-D`, `Neural2-F`, `Neural2-H`) to characters for distinction.  
+- Built **fallback logic** to automatically substitute voices if a preferred one was unavailable, ensuring pipeline stability.  
+- Generated **13 individual audio clips**, each corresponding to a script line.  
 
-3. **Audio Stitching with PyDub**  
-   - Used `stitch.py` to concatenate all clips into one file.  
-   - Added short pauses (600ms) for conversational realism.  
-   - Final artifact: `outputs/deepfake_job_interview.mp3`.  
+### 3. Audio Stitching
+- Implemented `stitch.py` to concatenate the generated clips into a single continuous interview.  
+- Added **600 ms pauses** between each clip to simulate conversational pacing.  
+- Exported the final stitched file as `outputs/deepfake_job_interview.mp3`.  
 
-4. **Repository Organization**  
+### 4. Repository Structure
+- `docs/` — process documentation (assignment .docx ignored in git)  
+- `scripts/` — Python scripts (`make_audio.py` and `stitch.py`)  
+- `src/prompts/` — plain text script of the interview  
+- `data/audio_clips/` — generated per-line MP3s (ignored in git for cleanliness)  
+- `outputs/` — final stitched interview file for submission  
+
+---
+
+## ⚙️ Tools & Resources
+
+- **Google Cloud Text-to-Speech (TTS)**  
+  - Used to generate synthetic voices with natural tone and clarity.  
+  - Explored multiple voices to create distinction between characters.  
+
+- **PyDub**  
+  - Python audio library for editing and merging clips.  
+  - Allowed insertion of silent pauses for natural pacing.  
+
+- **Python**  
+  - Used for automating both the audio generation (`make_audio.py`) and stitching (`stitch.py`).  
+  - Ensured reproducibility and minimized manual editing.  
+
+- **GitHub**  
+  - Repository created for version control, organization, and submission.  
+
+---
+
+## 📈 Key Results
+
+- ✅ Designed and documented a script representing realistic deep fake interview concerns.  
+- ✅ Generated **13 MP3 clips**, each assigned to a distinct speaker voice.  
+- ✅ Successfully merged clips into a **single continuous interview MP3**.  
+- ✅ Implemented fallback logic to ensure reliable execution despite voice availability issues.  
+- ✅ Structured repository for clarity, reproducibility, and submission requirements.  
+
+---
+
+## 🧠 Reflections
+
+### Strengths
+- Achieved a convincing interview-style dialogue with free tools.  
+- Multiple voices and pause insertions created a natural conversational flow.  
+- Modular design ensures that the workflow can be replicated for future experiments.  
+
+### Challenges
+- Lack of free video deep fake tools limited the output to audio.  
+- Certain neural voices were unavailable, requiring fallback logic.  
+- Audio pacing required manual experimentation to feel natural.  
+
+### Ethical Implications
+- The project highlights how **accessible synthetic media creation has become**.  
+- Demonstrates risks for **remote hiring**, where fraudulent candidates could exploit deep fakes.  
+- Underscores the necessity for **verification methods** and deep fake detection tools in professional contexts.  
+
+### Takeaway
+The project shows that even with basic, free resources, combining **text-to-speech with lightweight audio editing** can convincingly simulate a deep fake interview. This not only illustrates the creative possibilities of AI but also calls attention to the **serious ethical and security challenges** that accompany such technology.  
+
+---
